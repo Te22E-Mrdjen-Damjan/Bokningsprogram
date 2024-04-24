@@ -18,20 +18,21 @@ public class App {
             System.out.println("3.Visa Vinst");
             System.out.println("4.avsluta");
             Val = tb.nextInt();
-            if (Val==1){
-                System.out.println("Ange födelsedatum");
-                int pnr = tb.nextInt();
-                System.out.println("Ange sittplats (0-19)");
 
-                int plats = tb.nextInt();
-                System.out.println("------------------");
-                System.out.println("Du har bokad plats "+plats);
-                
-                if(array[plats]==0){
-                array[plats] = pnr;
-            
+                if (Val==1){
+                    System.out.println("Ange födelsedatum");
+                    int pnr = tb.nextInt();
+                    System.out.println("Ange sittplats (0-19)");
 
-            }
+                    int plats = tb.nextInt();
+                    System.out.println("------------------");
+                    System.out.println("Du har bokad plats "+plats);
+                    
+                    if(array[plats]==0){
+                    array[plats] = pnr;
+
+                }
+
             else if(array[plats]!=0){
                 System.out.println("------------------");
                 System.out.println("Platsen är tyvär bokad");
@@ -39,6 +40,7 @@ public class App {
             }
 
             }
+            //Se lediga platser
             else if (Val==2) {
 
 
@@ -56,11 +58,24 @@ public class App {
                 }
         // Slut loop
         }
+        //Beräkning av vinst
         else if (Val==3){
-            
 
+            int Vinst = 0;
+            int biljettpris = 300;
+
+                for(int i = 0;i<array.length;i++){
+
+                    if (array[i]!=0){
+
+                    Vinst = Vinst + biljettpris;
+                    }
+                
+                }
+
+            System.out.println("------------------");
+            System.out.println("vinsten är "+Vinst+"kr");
+            }
         }
-
-    }
     }
 }
