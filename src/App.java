@@ -25,17 +25,18 @@ public class App {
                     System.out.println("Ange sittplats (0-19)");
 
                     int plats = tb.nextInt();
-                    System.out.println("------------------");
-                    System.out.println("Du har bokad plats "+plats);
+                    
                     
                     if(array[plats]==0){
                     array[plats] = pnr;
+                    System.out.println("------------------");
+                    System.out.println("Du har bokad plats "+plats);
 
                 }
 
-            else if(array[plats]!=0){
-                System.out.println("------------------");
-                System.out.println("Platsen är tyvär bokad");
+                else if(array[plats]!=0){
+                    System.out.println("------------------");
+                    System.out.println("Platsen är tyvär bokad");
                 
             }
 
@@ -48,11 +49,13 @@ public class App {
                 {
                
                     if(array[i]==0){
-                    System.out.println("Platsen "+i+" är inte tagen");
+                        System.out.println("------------------");
+                    System.out.println("Platsen "+i+" är ledig");
                     }
                     else if(array[i]!= 0){
-
+                        System.out.println("------------------");
                     System.out.println("platsen "+i+" är tagen");
+
 
                     }
                 }
