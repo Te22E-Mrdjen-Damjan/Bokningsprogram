@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class App {
@@ -26,12 +27,12 @@ public class App {
                 System.out.println("------------------");
                 System.out.println("Du har bokad plats "+plats);
                 
-            if(array[plats]==0){
-            array[plats] = pnr;
+                if(array[plats]==0){
+                array[plats] = pnr;
             
 
             }
-            else if(array [plats]!=0){
+            else if(array[plats]!=0){
                 System.out.println("------------------");
                 System.out.println("Platsen är tyvär bokad");
                 
@@ -40,32 +41,26 @@ public class App {
             }
             else if (Val==2) {
 
-                for(int i = 0;i<array.length;i++){
-                   
-                    
-                    // OM element på plats i är 0 skriv att den är inte tagen 
-                    if (array==0){
-                        System.out.println("------------------");
-                        System.out.println("Plats "+ i +" är inte tagen");
-                    }
-                    else if(0){
-                        System.out.println("platsen är tagen");
-                    }
 
+                for(int i = 0;i<array.length;i++)
+                {
+               
+                    if(array[i]==0){
+                    System.out.println("Platsen "+i+" är inte tagen");
+                    }
+                    else if(array[i]!= 0){
+
+                    System.out.println("platsen "+i+" är tagen");
+
+                    }
                 }
-
-            }
-            else if (Val==3){
-
-
-            }
-
-            else if (Val==4){
-
-
-            }
-
         // Slut loop
         }
+        else if (Val==3){
+            
+
+        }
+
+    }
     }
 }
