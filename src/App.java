@@ -7,19 +7,25 @@ public class App {
         Scanner tb = new Scanner(System.in);
         int[]array = new int[20];
         int Val = 0;
-        
-    
+        int ValBokaAvboka = 0;
 
         // Start loop villkor för att köra är användaren inte väljer 4
         while(Val != 4){
             System.out.println("-------MENY-------");
-            System.out.println("1.Boka Plats");
+            System.out.println("1.Boka Plats/Avboka Plats");
             System.out.println("2.Visa lediga platser");
             System.out.println("3.Visa Vinst");
             System.out.println("4.avsluta");
             Val = tb.nextInt();
 
                 if (Val==1){
+
+                    System.out.println("Vänligen välj ett av alternativen");
+                    System.out.println("1.Boka");
+                    System.out.println("2.Avboka");
+                    ValBokaAvboka = tb.nextInt();
+                    if (ValBokaAvboka == 1){ 
+
                     System.out.println("Ange födelsedatum");
                     int pnr = tb.nextInt();
                     System.out.println("Ange sittplats (0-19)");
@@ -31,16 +37,36 @@ public class App {
                     array[plats] = pnr;
                     System.out.println("------------------");
                     System.out.println("Du har bokad plats "+plats);
+                    }
+
+                    else if(array[plats]!=0){
+                        System.out.println("------------------");
+                        System.out.println("Platsen är tyvär bokad");
+                        }
+                    }
+
+                    
+
+                    else if(ValBokaAvboka == 2){
+
+                        System.out.println("Ange födelsedatum");
+                        int födelsedatum = tb.nextInt();
+
+                        for(int i = 0;i<array.length;i++){
+
+                            if (födelsedatum == array[i]) {
+                                
+                                array[i]=0;
+                                System.out.println("------------------");
+                                System.out.println("Platsen är avbokad");
+                            }
+
+                        }
+
+                    }
+                    
 
                 }
-
-                else if(array[plats]!=0){
-                    System.out.println("------------------");
-                    System.out.println("Platsen är tyvär bokad");
-                
-            }
-
-            }
             //Se lediga platser
             else if (Val==2) {
 
@@ -54,7 +80,7 @@ public class App {
                     }
                     else if(array[i]!= 0){
                         System.out.println("------------------");
-                    System.out.println("platsen "+i+" är tagen");
+                    System.out.println("Platsen "+i+" är bokad");
 
 
                     }
