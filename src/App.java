@@ -1,4 +1,4 @@
-
+//Import scanner
 import java.util.Scanner;
 
 public class App {
@@ -11,19 +11,21 @@ public class App {
 
         // Start loop villkor för att köra är användaren inte väljer 4
         while(Val != 4){
+            //meny
             System.out.println("-------MENY-------");
             System.out.println("1.Boka Plats/Avboka Plats");
             System.out.println("2.Visa lediga platser");
             System.out.println("3.Visa Vinst");
             System.out.println("4.avsluta");
             Val = tb.nextInt();
-
+                //If sats för att boka eller avboka
                 if (Val==1){
-
+                    //Meny för att antingen boka eller avboka
                     System.out.println("Vänligen välj ett av alternativen");
                     System.out.println("1.Boka");
                     System.out.println("2.Avboka");
                     ValBokaAvboka = tb.nextInt();
+                    //Val för att boka
                     if (ValBokaAvboka == 1){ 
 
                     System.out.println("Ange födelsedatum");
@@ -32,7 +34,7 @@ public class App {
 
                     int plats = tb.nextInt();
                     
-                    
+                    //kodblock för att boka plats eller skriva ut att platsen är bokad
                     if(array[plats]==0){
                     array[plats] = pnr;
                     System.out.println("------------------");
@@ -46,7 +48,7 @@ public class App {
                     }
 
                     
-
+                    //Val för att avboka
                     else if(ValBokaAvboka == 2){
 
                         System.out.println("Ange födelsedatum");
@@ -73,7 +75,7 @@ public class App {
 
                 for(int i = 0;i<array.length;i++)
                 {
-               
+                    //Kodblock för att se om platsen är ledig eller bokad
                     if(array[i]==0){
                         System.out.println("------------------");
                     System.out.println("Platsen "+i+" är ledig");
@@ -89,10 +91,10 @@ public class App {
         }
         //Beräkning av vinst
         else if (Val==3){
-
+            
             int Vinst = 0;
             int biljettpris = 300;
-
+                
                 for(int i = 0;i<array.length;i++){
 
                     if (array[i]!=0){
@@ -101,7 +103,7 @@ public class App {
                     }
                 
                 }
-
+                //skriver ut vinst
             System.out.println("------------------");
             System.out.println("vinsten är "+Vinst+"kr");
             }
