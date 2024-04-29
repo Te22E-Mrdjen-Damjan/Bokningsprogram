@@ -21,15 +21,17 @@ public class App {
                 //If sats för att boka eller avboka
                 if (Val==1){
                     //Meny för att antingen boka eller avboka
+                    System.out.println("------------------");
                     System.out.println("Vänligen välj ett av alternativen");
                     System.out.println("1.Boka");
                     System.out.println("2.Avboka");
                     ValBokaAvboka = tb.nextInt();
                     //Val för att boka
                     if (ValBokaAvboka == 1){ 
-
+                        System.out.println("------------------");
                     System.out.println("Ange födelsedatum");
                     int pnr = tb.nextInt();
+                    System.out.println("------------------");
                     System.out.println("Ange sittplats (0-19)");
 
                     int plats = tb.nextInt();
@@ -50,7 +52,7 @@ public class App {
                     
                     //Val för att avboka
                     else if(ValBokaAvboka == 2){
-
+                        System.out.println("------------------");
                         System.out.println("Ange födelsedatum");
                         int födelsedatum = tb.nextInt();
 
@@ -91,9 +93,9 @@ public class App {
         }
         //Beräkning av vinst
         else if (Val==3){
-            
-            int Vinst = 0;
-            int biljettpris = 300;
+
+            Double Vinst = 0.;
+            Double biljettpris = 299.90;
                 
                 for(int i = 0;i<array.length;i++){
 
